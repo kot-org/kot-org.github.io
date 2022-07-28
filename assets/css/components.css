@@ -1,0 +1,42 @@
+/* HEADER */
+#he-e1 {
+    position: relative;
+    width: 100%;
+    height: 80px;
+    background-color: #252525;
+    border-bottom: 1px solid #444444;
+    user-select: none;
+}
+
+/* Left */
+#he-e1 #he-e1e1 {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Right */
+#he-e1 #he-e1e2 {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#he-e1 #he-e1e2 .he-e1e2-btn {
+    display: inline-block;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+#he-e1 #he-e1e2 .he-e1e2-btn a {
+    color: #dedede;
+    font-size: 23px;
+}
+
+#he-e1 #he-e1e2 .he-e1e2-btn:hover {
+    text-decoration: underline;
+    color: #a5a5a5;
+}
+/* END HEADER */
