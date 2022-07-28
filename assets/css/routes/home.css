@@ -1,12 +1,36 @@
 /* MAIN */
-.home-sect:first-child {
-    height: calc(100vh - 81px);
-    background-color: green;
+.home-sect:nth-child(2n+1) {
+    height: 55vh;
+    background-color: #282828;
 }
 .home-sect {
     position: relative;
-    background-color: red;
     width: 100%;
-    height: 500px;
+    height: 50vh;
+}
+
+/* First section */
+#hse-e1 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+}
+#hse-e1 #hse-e1-e1 {
+    left: 0;
+    padding-right: 40px;
+    border-right: 1px solid #444444;
+    display: inline-block;
+}
+#hse-e1 #hse-e1-e1 img {
+    width: 400px;
+    vertical-align: middle;
+    border-radius: 20px;
+    box-shadow: 0 0 40px -5px #a32e5fa1;
+}
+#hse-e1 #hse-e1-e2 {
+    right: 0;
+    padding-left: 40px;
+    display: inline-block;
 }
 /* END MAIN */
