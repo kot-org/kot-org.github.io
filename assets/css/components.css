@@ -6,6 +6,7 @@
     z-index: 1000;
     background-color: #252525e0;
     backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     border-bottom: 1px solid #444444;
     user-select: none;
 }

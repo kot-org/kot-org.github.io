@@ -13,3 +13,7 @@ body {
 main {
     transform: translateY(100px);
 }
+
+.-hov-effect:hover {
+    opacity: .8;
+}
