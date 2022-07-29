@@ -61,7 +61,7 @@
 /* END MAIN */
 @media (max-width: 850px) {
     .home-sect .-hse {
-        padding: 100px 20px 100px 20px;
+        padding: 100px 40px 100px 40px;
     }
     #hse-e1 > div {
         display: block;
