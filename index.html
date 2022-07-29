@@ -12,25 +12,14 @@
 
     <link rel="stylesheet" href="./assets/css/routes/home.css">
 
-    <title>Kot</title>
+    <title>KotOS</title>
 </head>
 <body>
     <!-- HEADER -->
     <div id="he-e1">
         <div id="he-e1e1">
             <div id="he-e1e1-e1">
-                
-            </div>
-        </div>
-        <div id="he-e1e2">
-            <div class="he-e1e2-btn act-effect">
-                <a href="#">Releases</a>
-            </div>
-            <div class="he-e1e2-btn act-effect">
-                <a href="#">Download</a>
-            </div>
-            <div class="he-e1e2-btn act-effect">
-                <a href="https://github.com/kot-org/Kot" target="_blank">GitHub</a>
+                <div id="header-logo"></div>
             </div>
         </div>
     </div>
@@ -38,30 +27,47 @@
     <!-- MAIN -->
     <main>
         <section class="home-sect">
-            <div id="hse-e1">
+            <div id="hse-e1" class="-hse">
                 <div style="display: flex; justify-content: center;">
                     <div id="hse-e1-e1">
-                        <img src="./assets/img/kot-logo-2.png" alt="Second Kot Logo">
+                        <div></div>
                     </div>
                     <div id="hse-e1-e2">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        <div id="hse-e1-e2-e1">
+                            <span>KotOS</span>
+                        </div>
+                        <div id="hse-e1-e2-e2">
+                            <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil eos sequi eaque? Labore, tenetur, id facere pariatur iusto dicta minima totam asperiores quisquam, consectetur dolor deserunt officia inventore nesciunt nulla.</span>
+                        </div>
+                        <div id="hse-e1-e2-e3">
+                            <span onclick="window.open('https://github.com/kot-org/Kot/releases', '_blank')">Download the latest release</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
         <section class="home-sect">
-
+            <div class="-hse"></div>
         </section>
         <section class="home-sect">
-
+            <div class="-hse"></div>
         </section>
         <section class="home-sect">
-
+            <div class="-hse"></div>
         </section>
         <section class="home-sect">
-
+            <div class="-hse"></div>
         </section>
     </main>
     <!-- END MAIN -->
+    <script>
+        window.onscroll = () => {
+            if(document.documentElement.scrollTop > 0) {
+                document.getElementById('header-logo').classList.add('-header-onscroll')
+            } else {
+                document.getElementById('header-logo').classList.remove('-header-onscroll')
+            }
+        }
+    </script>
 </body>
 </html>
