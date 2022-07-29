@@ -10,7 +10,7 @@
     user-select: none;
 }
 #he-e1 #he-e1e1 {
-    padding: 16px 1.5rem 16px 1.5rem;
+    padding: 14px 1.5rem 14px 1.5rem;
 }
 #he-e1 #he-e1e1 #he-e1e1-e1 {
     max-width: 1200px;
@@ -19,14 +19,12 @@
 #he-e1 #he-e1e1 #he-e1e1-e1 > div {
     border: 2px solid #444444;
     border-radius: 10px;
-    background-image: url(../../assets/img/kot-logo-kot-header.png);
-    background-size: 96px;
-    width: 96px;
+    background-image: url(../../assets/img/kot-logo-header.png);
+    background-color: #181818;
+    background-size: 140px;
+    background-position: center;
+    width: 80px;
     height: 68px;
-    transition: .5s;
-}
-#he-e1 #he-e1e1 #he-e1e1-e1 > div.-header-onscroll {
-    background-image: url(../../assets/img/kot-logo-kot-header-2.png);
     transition: .5s;
 }
 /* END HEADER */
