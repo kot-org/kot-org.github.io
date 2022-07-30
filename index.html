@@ -48,27 +48,45 @@
         </section>
         <section class="home-sect">
             <div id="hse-e2" class="-hse">
-                <div id='hse-e2e1'>
-                    <div id="hse-e2e1-e1">
-                        <span class="-hov-effect" onclick="window.open('https://github.com/kot-org/Kot/contributors', '_blank')" style="font-size: 32px; font-weight: 700; color: #dedede;">Contributors</span>
+                <div>
+                    <div id='hse-e2e1'>
+                        <div id="hse-e2e1-e1">
+                            <span class="-hov-effect" onclick="window.open('https://github.com/kot-org/Kot/contributors', '_blank')" style="font-size: 32px; font-weight: 700; color: #dedede;">Contributors</span>
+                        </div>
+                        <div id="hse-e2e1-e2">
+                            <!-- Contributors -->
+                        </div>
                     </div>
-                    <div id="hse-e2e1-e2">
-                        <!-- Contributors -->
-                    </div>
-                </div>
-                <div id="hse-e2e2">
-                    <div id="hse-e2e2-e1">
-                        <span class="-hov-effect" onclick="window.open('https://github.com/kot-org/Kot/commits', '_blank')" style="font-size: 32px; font-weight: 700; color: #dedede;">Last commit</span>
-                    </div>
-                    <div id="hse-e2e2-e2">
-                        <!-- Commits -->
-                        
+                    <div id="hse-e2e2">
+                        <div id="hse-e2e2-e1">
+                            <span class="-hov-effect" onclick="window.open('https://github.com/kot-org/Kot/commits', '_blank')" style="font-size: 32px; font-weight: 700; color: #dedede;">Last commit</span>
+                        </div>
+                        <div id="hse-e2e2-e2">
+                            <!-- Commits -->
+                            
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="home-sect">
-            <div id="hse-e3" class="-hse"></div>
+        <section class="home-sect" style="background: linear-gradient(160deg, rgb(137,66,219) 0%, rgb(181,34,115) 55%, rgb(223, 173, 89) 100%);">
+            <div id="hse-e3" class="-hse">
+                <div id='hse-e3e1'>
+                    <div id='hse-e3e1-e1'>
+                        <div id='hse-e3e1-e1-e1'>
+                            <span style="font-size: 32px; font-weight: 700; color: #dedede;">Open source</span>
+                        </div>
+                        <div id='hse-e3e1-e1-e2'>
+                            <span>Kot is an open source project, anyone can understand how it works. You want to contribute? Join the <a href="https://github.com/kot-org/Kot" style="color: #fff;">GitHub</a>!</span>
+                        </div>
+                    </div>
+                    <div id='hse-e3e1-e2'>
+                        <div id="hse-e3e1-e2-e1">
+                            <img src="./assets/img/openSource.png" alt="Open source icon">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
         <section class="home-sect">
             <div id="hse-e4" class="-hse"></div>
@@ -107,7 +125,7 @@
                         <div style="color: #cacaca; font-size: 19px;">
                             <span>${last_commit.author.name}</span> &#8226; <span>${new Date(last_commit.author.date).toLocaleString()}</span>
                         </div>
-                        <div style="color: #dedede; margin-top: 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 200px;">
+                        <div style="color: #dedede; margin-top: 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 150px;">
                             <span style="">${last_commit.message}</span>
                         </div>
                     </div>

@@ -11,11 +11,13 @@
     padding: 100px;
 }
 
-/* First section */
-#hse-e1 > div {   
+.-hse > div {   
     display: flex;
     justify-content: center;
+    align-items: center;
 }
+
+/* First section */
 #hse-e1 #hse-e1-e1 {
     padding-right: 40px;
     border-right: 1px solid #444444;
@@ -57,10 +59,6 @@
 }
 /* End first section */
 /* Section contributors */
-#hse-e2 {
-    display: flex;
-    justify-content: center;
-}
 /* Contributors */
 #hse-e2 #hse-e2e1 {
     padding-right: 50px;
@@ -86,7 +84,7 @@
     border-radius: 10px;
     background-color: #191919;
     vertical-align: middle;
-    padding: 5px;
+    padding: 2px;
 }
 /* End contributors */
 /* Commits */
@@ -109,6 +107,27 @@
 }
 /* End commits */
 /* End section contributors */
+/* Section open source */
+#hse-e3 #hse-e3e1-e1,
+#hse-e3 #hse-e3e1-e2 {
+    display: inline-block;
+    vertical-align: middle;
+}
+#hse-e3 #hse-e3e1-e1 {
+    padding-right: 40px;
+}
+#hse-e3 #hse-e3e1-e2 {
+    padding-left: 40px;
+}
+#hse-e3 #hse-e3e1 #hse-e3e1-e1 #hse-e3e1-e1-e2 {
+    margin-top: 10px;
+    max-width: 500px;
+}
+#hse-e3 #hse-e3e1 #hse-e3e1-e2 #hse-e3e1-e2-e1 img {
+    width: 300px;
+    max-width: 100%;
+}
+/* End section open source */
 /* END MAIN */
 @media (max-width: 850px) {
     .home-sect .-hse {
@@ -134,7 +153,8 @@
     }   
 }
 @media (max-width: 700px) {
-    #hse-e2 {
+    #hse-e2 > div,
+    #hse-e3 > div {
         display: block;
     }
     #hse-e2 #hse-e2e1 {
@@ -148,9 +168,25 @@
         width: 100%;
         margin-top: 50px;
     }
-    #hse-e2 #hse-e2e2 #hse-e2e2-e1 {
+    #hse-e2 #hse-e2e2 #hse-e2e2-e1,
+    #hse-e3 #hse-e3e1-e2 {
         display: flex;
         justify-content: center;
+        padding: 0;
+    }
+    #hse-e3 #hse-e3e1-e1 {
+        padding: 0;
+        text-align: center;
+    }
+    #hse-e3 #hse-e3e1 #hse-e3e1-e1 #hse-e3e1-e1-e2 {
+        margin: 10px auto 0;
+        max-width: none;
+    }
+    #hse-e3 #hse-e3e1 #hse-e3e1-e2 {
+        margin-top: 50px;
+    }
+    #hse-e3 #hse-e3e1 #hse-e3e1-e2 #hse-e3e1-e2-e1 img {
+        width: 180px;
     }
     #hse-e2 #hse-e2e2 #hse-e2e2-e2 #hse-e2e2-e2-e1 {
         max-width: none;
