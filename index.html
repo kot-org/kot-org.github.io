@@ -81,9 +81,7 @@
     <script>
         async function GetRepoInfo(info) {
             const res = await fetch(`https://api.github.com/repos/kot-org/Kot/${info}`, {
-                headers: {
-                    'Authorization': 'token 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',
-                }
+                method: "GET"
             })
             
             return await res.json()
