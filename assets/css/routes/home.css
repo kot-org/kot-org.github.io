@@ -1,0 +1,176 @@
+/* MAIN */
+.home-sect:nth-child(2n+1) {
+    background-color: #282828;
+}
+.home-sect {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.home-sect .-hse {
+    padding: 100px;
+}
+
+.-hse > div {   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* First section */
+#hse-e1 #hse-e1-e1 {
+    padding-right: 40px;
+    border-right: 1px solid #444444;
+    display: flex;
+}
+#hse-e1 #hse-e1-e1 > div {
+    width: 430.8px;
+    height: 253.6px;
+    margin: auto;
+    background-size: 430.8px;
+    background-image: url(../../../assets/img/kot-laptop.png);
+    filter: drop-shadow(0 0 50px #a32e5fc2);
+    transition: .5s;
+}
+#hse-e1 #hse-e1-e2 {
+    padding-left: 40px;
+    max-width: 400px;
+}
+#hse-e1 #hse-e1-e2 #hse-e1-e2-e1 {
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+#hse-e1 #hse-e1-e2 #hse-e1-e2-e2 {
+    margin-top: 20px;
+}
+#hse-e1 #hse-e1-e2 #hse-e1-e2-e3 {
+    margin-top: 50px;
+}
+#hse-e1 #hse-e1-e2 #hse-e1-e2-e3 span {
+    padding: 20px;
+    display: inline-block;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 17px;
+    background-color: #a32e5f;
+    user-select: none;
+}
+/* End first section */
+/* Section commit */
+#hse-e2 > div{
+    align-items: unset;
+}
+/* Last commit */
+#hse-e2 #hse-e2e1 {
+    padding-right: 50px;
+    width: 400px;
+}
+#hse-e2 #hse-e2e1 #hse-e2e1-e2 {
+    margin-top: 30px;
+}
+#hse-e2 #hse-e2e1 #hse-e2e1-e2 #hse-e2e1-e2-e1 {
+    max-width: 400px;
+    background-color: #191919;
+    border-radius: 15px;
+    cursor: pointer;
+    user-select: none;
+}
+/* End last commit */
+/* Commits Graph */
+#hse-e2 #hse-e2e2 {
+    padding-left: 50px;
+    width: 550px;
+}
+#hse-e2 #hse-e2e2 #hse-e2e2-e2 {
+    margin-top: 30px;
+    background-color: #191919;
+    height: 100px;
+    padding: 25px;
+    border-radius: 15px;
+}
+/* End Commits Graph */
+/* End section commit */
+/* Section open source */
+#hse-e3 #hse-e3e1-e1 {
+    padding-right: 40px;
+}
+#hse-e3 #hse-e3e1-e2 {
+    padding-left: 40px;
+}
+#hse-e3 #hse-e3e1 #hse-e3e1-e1 #hse-e3e1-e1-e2 {
+    margin-top: 10px;
+    max-width: 500px;
+}
+#hse-e3 #hse-e3e1 #hse-e3e1-e2 #hse-e3e1-e2-e1 img {
+    width: 300px;
+    max-width: 100%;
+    box-shadow: 0px 0px 25px 2px rgba(0, 0, 0, 0.35);
+    border-radius: 60px;
+}
+/* End section open source */
+/* END MAIN */
+@media (max-width: 850px) {
+    .home-sect .-hse {
+        padding: 100px 40px 100px 40px;
+    }
+    #hse-e1 > div {
+        display: block;
+    }
+    #hse-e1 #hse-e1-e1 {
+        display: block;
+        border-right: none;
+        padding-right: 0;
+    }
+    #hse-e1 #hse-e1-e1 > div {
+        width: 215.4px;
+        height: 126.8px;
+        background-size: cover;
+    }
+    #hse-e1 #hse-e1-e2 {
+        padding-left: 0;
+        margin-top: 50px;
+        max-width: 100%;
+    }   
+}
+@media (max-width: 700px) {
+    #hse-e2 > div,
+    #hse-e3 > div {
+        display: block;
+    }
+    #hse-e2 #hse-e2e1 {
+        padding: 0;
+        width: 100%;
+    }
+    #hse-e2 #hse-e2e2 {
+        margin-top: 50px;
+        padding: 0;
+        width: 100%;
+    }
+    #hse-e2 #hse-e2e2 #hse-e2e2-e1 {
+        text-align: center;
+    }
+    #hse-e2 #hse-e2e1 #hse-e2e1-e1,
+    #hse-e3 #hse-e3e1-e2 {
+        text-align: center;
+        padding: 0;
+    }
+    #hse-e3 #hse-e3e1-e1 {
+        padding: 0;
+        text-align: center;
+    }
+    #hse-e3 #hse-e3e1 #hse-e3e1-e1 #hse-e3e1-e1-e2 {
+        margin: 10px auto 0;
+        max-width: none;
+    }
+    #hse-e3 #hse-e3e1 #hse-e3e1-e2 {
+        margin-top: 50px;
+    }
+    #hse-e3 #hse-e3e1 #hse-e3e1-e2 #hse-e3e1-e2-e1 img {
+        width: 180px;
+    }
+    #hse-e2 #hse-e2e1 #hse-e2e1-e2 #hse-e2e1-e2-e1 {
+        max-width: none;
+    }
+}
