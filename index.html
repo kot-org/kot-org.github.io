@@ -175,7 +175,11 @@
             const last_commit = commits[0]
 
             /* On affiche la ligne du temps des commits */
-            displayCommitsTimeline(commits, 10)
+            if(window.matchMedia('(max-width: 500px)').matches) {
+                displayCommitsTimeline(commits, 5)
+            } else {
+                displayCommitsTimeline(commits, 10)
+            }
 
             document.getElementById('hse-e2e1-e2').innerHTML =
                 `<div id="hse-e2e1-e2-e1" onclick="window.open('${last_commit.html_url}', '_blank')">
