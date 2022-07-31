@@ -20,6 +20,7 @@
     <title>KotOS</title>
 </head>
 <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
     <!-- HEADER -->
     <div id="he-e1">
         <div id="he-e1e1">
@@ -31,40 +32,44 @@
     <!-- END HEADER -->
     <!-- MAIN -->
     <main>
+        <!-- Main section -->
         <section class="home-sect">
             <div id="hse-e1" class="-hse">
                 <div>
-                    <div id="hse-e1-e1">
+                    <div id="hse-e1e1">
                         <div></div>
                     </div>
-                    <div id="hse-e1-e2">
-                        <div id="hse-e1-e2-e1">
+                    <div id="hse-e1e2">
+                        <div id="hse-e1e2-e1">
                             <span>KotOS</span>
                         </div>
-                        <div id="hse-e1-e2-e2">
+                        <div id="hse-e1e2-e2">
                             <span>Kot is nothing more than an Operating System running on x86-64. And you already know that, but we're making to turn Kot more than just something.</span>
                         </div>
-                        <div id="hse-e1-e2-e3">
+                        <div id="hse-e1e2-e3">
                             <span class="-hov-effect" onclick="window.open('https://github.com/kot-org/Kot/releases', '_blank')">Download the latest release</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+        <!-- End main section -->
+        <!-- Commits section -->
         <section class="home-sect">
             <div id="hse-e2" class="-hse">
                 <div>
+                    <!-- Last commit -->
                     <div id="hse-e2e1">
                         <div id="hse-e2e1-e1">
                             <span class="-hov-effect" onclick="window.open('https://github.com/kot-org/Kot/commits', '_blank')" style="font-size: 32px; font-weight: 700; color: #dedede; cursor: pointer;">Last commit</span>
                         </div>
                         <div id="hse-e2e1-e2">
-                            <!-- Commits -->
                             
                         </div>
                     </div>
+                    <!-- End last commit  -->
+                    <!-- Commits timeline -->
                     <div id="hse-e2e2">
-                        <!-- Commits Graph -->
                         <div id="hse-e2e2-e1">
                             <span class="-hov-effect" style="font-size: 32px; font-weight: 700; color: #dedede; cursor: pointer;">Commits timeline</span>
                         </div>
@@ -73,9 +78,12 @@
                             <div id="commits_progress" style="display: flex; justify-content: space-between; margin-top: 20px; height: 4px; background-color: #303030; align-items: center;"></div>
                         </div>
                     </div>
+                    <!-- End commits timeline -->
                 </div>
             </div>
         </section>
+        <!-- End commits section -->
+        <!-- Open source section -->
         <section class="home-sect" style="background: linear-gradient(160deg, rgb(137,66,219) 0%, rgb(181,34,115) 55%, rgb(223, 173, 89) 100%);">
             <div id="hse-e3" class="-hse">
                 <div id='hse-e3e1'>
@@ -95,6 +103,7 @@
                 </div>
             </div>
         </section>
+        <!-- End open source section -->
         <section class="home-sect">
             <div id="hse-e4" class="-hse"></div>
         </section>
@@ -111,31 +120,27 @@
             
             return await res.json()
         }
-
-        (async () => {
-            
-            
-            /* Commits */
-            const commits = await GetRepoInfo('commits'), last_commit = commits[0],
-             _commits = commits.sort((a, b) => {
-                if(new Date(a.commit.author.date).getDate() < new Date(b.commit.author.date).getDate()) {
-                    return -1;
-                }
-                if(new Date(a.commit.author.date).getDate() > new Date(b.commit.author.date).getDate()) {
-                    return 1;
-                }
-                return 0;
-            }), /* Du plus petit au plus grand */
-            monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-
+        
+        function displayCommitsTimeline(commits, number) {
             let commit_last_day
+                const _commits = commits.sort((a, b) => {
+                    if(new Date(a.commit.author.date).getDate() < new Date(b.commit.author.date).getDate()) {
+                        return -1;
+                    }
+                    if(new Date(a.commit.author.date).getDate() > new Date(b.commit.author.date).getDate()) {
+                        return 1;
+                    }
+                    return 0;
+                }), /* Du plus petit au plus grand */
+                monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
+            document.getElementById('commits_progress').innerHTML = ""
             document.getElementById('info_commits_timeline').innerText = `Commits this month (${monthNames[new Date().getMonth()]})`
 
-            for(let i = 20; i < 30; i++) { /* Affiche 10 commits */
+            for(let i = 30-number; i < 30; i++) { /* Affiche 10 commits */
                 if(new Date(_commits[i].commit.author.date).getMonth()+1 == new Date().getMonth()+1) {
                     document.getElementById('commits_progress').innerHTML += 
-                        `<div onclick="window.open('${_commits[i].html_url}', '_blank')" id="commitProg-${new Date(_commits[i].commit.author.date).getDate()}" style="display: flex; justify-content: center; background-color: #555555; width: 12px; height: 12px; cursor: pointer;"></div>`
+                        `<div onclick="window.open('${_commits[i].html_url}', '_blank')" id="commitProg-${new Date(_commits[i].commit.author.date).getDate()}" style="display: flex; justify-content: center; background-color: #555555; width: 12px; height: 12px; border-radius: 50px; border: 2px solid #929292; cursor: pointer;"></div>`
 
                     if(i > 0)
                         if(new Date(_commits[i].commit.author.date).getDate() > commit_last_day) { /* Quand le jour n'est plus le même */
@@ -150,6 +155,18 @@
                     commit_last_day = new Date(_commits[i].commit.author.date).getDate()
                 }
             }
+        }
+
+        
+        /* Commits */
+        let commits
+
+        (async () => {
+            commits = await GetRepoInfo('commits')
+            const last_commit = commits[0]
+
+            /* On affiche la ligne du temps des commits */
+            displayCommitsTimeline(commits, 10)
 
             document.getElementById('hse-e2e1-e2').innerHTML =
                 `<div id="hse-e2e1-e2-e1" onclick="window.open('${last_commit.html_url}', '_blank')">
@@ -168,6 +185,16 @@
                     </div>
                 </div>`
         })()
+
+        /* Quand la fenetre est en dessous de 400px de largeur, on diminue le nombre de commits à afficher */
+        window.matchMedia('(max-width: 500px)').onchange = (e) => {
+            if(e.matches) {
+                displayCommitsTimeline(commits, 5)
+            } else {
+                displayCommitsTimeline(commits, 10)
+            }
+        }
+        /* End commits */
     </script>
 </body>
 </html>
