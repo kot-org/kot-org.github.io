@@ -12,10 +12,10 @@
     
     <link rel="shortcut icon" href="./assets/img/kot-logo.png" type="image/x-icon">
 
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/css/components.css">
+    <link rel="stylesheet" href="./assets/css/style.min.css">
+    <link rel="stylesheet" href="./assets/css/components.min.css">
 
-    <link rel="stylesheet" href="./assets/css/routes/home.css">
+    <link rel="stylesheet" href="./assets/css/routes/home.min.css">
 
     <title>KotOS</title>
 </head>
@@ -54,21 +54,23 @@
         <section class="home-sect">
             <div id="hse-e2" class="-hse">
                 <div>
-                    <div id='hse-e2e1'>
+                    <div id="hse-e2e1">
                         <div id="hse-e2e1-e1">
-                            <span class="-hov-effect" onclick="window.open('https://github.com/kot-org/Kot/contributors', '_blank')" style="font-size: 32px; font-weight: 700; color: #dedede;">Contributors</span>
+                            <span class="-hov-effect" onclick="window.open('https://github.com/kot-org/Kot/commits', '_blank')" style="font-size: 32px; font-weight: 700; color: #dedede; cursor: pointer;">Last commit</span>
                         </div>
                         <div id="hse-e2e1-e2">
-                            <!-- Contributors -->
+                            <!-- Commits -->
+                            
                         </div>
                     </div>
                     <div id="hse-e2e2">
+                        <!-- Commits Graph -->
                         <div id="hse-e2e2-e1">
-                            <span class="-hov-effect" onclick="window.open('https://github.com/kot-org/Kot/commits', '_blank')" style="font-size: 32px; font-weight: 700; color: #dedede;">Last commit</span>
+                            <span class="-hov-effect" style="font-size: 32px; font-weight: 700; color: #dedede; cursor: pointer;">Commits timeline</span>
                         </div>
                         <div id="hse-e2e2-e2">
-                            <!-- Commits -->
-                            
+                            <span id="info_commits_timeline" style="color: #c2c2c2; font-size: 15px; font-weight: 600;"></span>
+                            <div id="commits_progress" style="display: flex; justify-content: space-between; margin-top: 20px; height: 4px; background-color: #303030; align-items: center;"></div>
                         </div>
                     </div>
                 </div>
@@ -104,34 +106,67 @@
     <script>
         async function GetRepoInfo(info) {
             const res = await fetch(`https://api.github.com/repos/kot-org/Kot/${info}`, {
-                method: "GET"
+                method: "GET",
+                headers: {
+                    "Authorization": "token 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"
+                }
             })
             
             return await res.json()
         }
 
         (async () => {
-            const contributors = await GetRepoInfo('contributors'), commits = await GetRepoInfo('commits'), last_commit = commits[0].commit
             
-            /* Contributors */
-            for(let i = 0; i < 3; i++) { // Affiche Konect, Yira et Seb
-                document.getElementById('hse-e2e1-e2').innerHTML += 
-                    `<div class="-contributor-el -hov-effect" id='-hse-contri-${i}' title="${contributors[i].login}" onclick="window.open('${contributors[i].html_url}', '_blank')">
-                        <img src="${contributors[i].avatar_url}" alt="Profile picture of ${contributors[i].login}">
-                    </div>`
+            
+            /* Commits */
+            const commits = await GetRepoInfo('commits'), last_commit = commits[0],
+             _commits = commits.sort((a, b) => {
+                if(new Date(a.commit.author.date).getDate() < new Date(b.commit.author.date).getDate()) {
+                    return -1;
+                }
+                if(new Date(a.commit.author.date).getDate() > new Date(b.commit.author.date).getDate()) {
+                    return 1;
+                }
+                return 0;
+            }), /* Du plus petit au plus grand */
+            monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+
+            let commit_last_day
+
+            document.getElementById('info_commits_timeline').innerText = `Commits this month (${monthNames[new Date().getMonth()]})`
+
+            for(let i = 20; i < 30; i++) { /* Affiche 10 commits */
+                if(new Date(_commits[i].commit.author.date).getMonth()+1 == new Date().getMonth()+1) {
+                    document.getElementById('commits_progress').innerHTML += 
+                        `<div onclick="window.open('${_commits[i].html_url}', '_blank')" id="commitProg-${new Date(_commits[i].commit.author.date).getDate()}" style="display: flex; justify-content: center; background-color: #555555; width: 12px; height: 12px; cursor: pointer;"></div>`
+
+                    if(i > 0)
+                        if(new Date(_commits[i].commit.author.date).getDate() > commit_last_day) { /* Quand le jour n'est plus le même */
+                            document.getElementById('commitProg-'+new Date(_commits[i].commit.author.date).getDate()).innerHTML = 
+                                `<div style="height: 70px; width: 2px; background-color: #555555;">
+                                    <div style="position: relative; height: 100%; display: flex; justify-content: center;">
+                                        <div title="${new Date(_commits[i].commit.author.date)}" style="user-select: none; cursor: pointer; font-size: 14px; font-weight: 600; position: absolute; bottom: 0; background-color: #333333; padding: 7px; width: 20px; text-align: center; border-radius: 50px;">${new Date(_commits[i].commit.author.date).getDate()}</div>
+                                    </div>
+                                </div>`
+                        }
+
+                    commit_last_day = new Date(_commits[i].commit.author.date).getDate()
+                }
             }
 
-            /* Commits */
-            last_commit.html_url = last_commit.url.replace('/repos', '').replace('api.', '').replace('commits', 'commit').replace('git/', '')
-
-            document.getElementById('hse-e2e2-e2').innerHTML =
-                `<div id="hse-e2e2-e2-e1" onclick="window.open('${last_commit.html_url}', '_blank')">
-                    <div style="padding: 20px;">
-                        <div style="color: #cacaca; font-size: 19px;">
-                            <span>${last_commit.author.name}</span> &#8226; <span>${new Date(last_commit.author.date).toLocaleString()}</span>
+            document.getElementById('hse-e2e1-e2').innerHTML =
+                `<div id="hse-e2e1-e2-e1" onclick="window.open('${last_commit.html_url}', '_blank')">
+                    <div style="padding: 20px; display: flex; align-items: center;">
+                        <div>
+                            <img style="width: 60px; border-radius: 10px; background-color: #444444; padding: 2px;" src="${last_commit.author.avatar_url}" alt="Profile picture of ${last_commit.author.login}">
                         </div>
-                        <div style="color: #dedede; margin-top: 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 150px;">
-                            <span style="">${last_commit.message}</span>
+                        <div style="margin-left: 20px;">
+                            <div style="color: #cacaca; font-size: 19px; font-weight: 600;">
+                                <span>${last_commit.author.login}</span> &#8226; <span>${new Date(last_commit.commit.author.date).toLocaleString()}</span>
+                            </div>
+                            <div style="color: #dedede; margin-top: 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 150px;">
+                                <span style="text-decoration: underline;">Click to view</span>
+                            </div>
                         </div>
                     </div>
                 </div>`
