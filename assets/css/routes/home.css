@@ -144,22 +144,28 @@
         padding: 0;
         width: 100%;
     }
+    #hse-e2 #hse-e2e1 #hse-e2e1-e1 {
+        text-align: center;
+    }
     #hse-e2 #hse-e2e1 #hse-e2e1-e2 #hse-e2e1-e2-e1 {
         max-width: none;
     }
     /* End last commit */
-    /* Commits Graph */
+    /* Commits timeline */
     #hse-e2 #hse-e2e2 {
         margin-top: 50px;
         padding: 0;
         width: 100%;
     }
-    #hse-e2 #hse-e2e2 #hse-e2e2-e1 {
+    #hse-e2 #hse-e2e2 {
         padding: 0;
+    }
+    #hse-e2 #hse-e2e2 #hse-e2e2-e1 {
         text-align: center;
     }
-    /* End Commits Graph */
-    /* End section commit */
+    /* End Commits timeline */
+    /* End commits section */
+    /* Open source section */
     #hse-e3 > div {
         display: block;
     }
@@ -181,5 +187,5 @@
     #hse-e3 #hse-e3e1 #hse-e3e1-e2 #hse-e3e1-e2-e1 img {
         width: 180px;
     }
-    /* End commits section */
+    /* End open source section */
 }
