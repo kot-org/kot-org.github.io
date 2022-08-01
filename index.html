@@ -72,7 +72,7 @@
                         <div id="hse-e2e1-e1">
                             <span class="-hov-effect" onclick="window.open('https://github.com/kot-org/Kot/commits', '_blank')" style="font-size: 32px; font-weight: 700; color: #dedede; cursor: pointer;">Last commit</span>
                         </div>
-                        <div id="hse-e2e1-e2">
+                        <div id="hse-e2e1-e2" class="-hov-effect">
                             
                         </div>
                     </div>
@@ -101,7 +101,7 @@
                             <span style="font-size: 32px; font-weight: 700; color: #dedede;">Open source</span>
                         </div>
                         <div id='hse-e3e1-e1-e2'>
-                            <span>Kot is an open source project that anyone can understand how it works. You want to contribute? Join the <a href="https://github.com/kot-org/Kot" target="_blank" style="color: #fff;">GitHub</a>!</span>
+                            <span>Kot is an open source project that anyone can understand how it works. You want to contribute? Join us!</span>
                         </div>
                     </div>
                     <div id='hse-e3e1-e2'>
@@ -131,7 +131,7 @@
         }
         
         function displayCommitsTimeline(commits, number) {
-            let commit_last_day
+            let commit_last_day = 0
                 const _commits = commits.sort((a, b) => {
                     if(new Date(a.commit.author.date).getDate() < new Date(b.commit.author.date).getDate()) {
                         return -1;
@@ -146,21 +146,20 @@
             document.getElementById('commits_progress').innerHTML = ""
             document.getElementById('info_commits_timeline').innerText = `Commits this month (${monthNames[new Date().getMonth()]})`
 
-            for(let i = 30-number; i < 30; i++) { /* Affiche 10 commits */
+            for(let i = 0; i < number; i++) {
                 if(new Date(_commits[i].commit.author.date).getMonth()+1 == new Date().getMonth()+1) {
                     document.getElementById('commits_progress').innerHTML += 
-                        `<div onclick="window.open('${_commits[i].html_url}', '_blank')" id="commitProg-${new Date(_commits[i].commit.author.date).getDate()}" style="display: flex; justify-content: center; background-color: #555555; width: 12px; height: 12px; border-radius: 50px; border: 2px solid #929292; cursor: pointer;"></div>`
+                        `<div onclick="window.open('${_commits[i].html_url}', '_blank')" id="commitProg-${new Date(_commits[i].commit.author.date).getDate()}" class="-hov-effect" style="display: flex; justify-content: center; background-color: #555555; width: 12px; height: 12px; border-radius: 50px; border: 2px solid #929292; cursor: pointer;"></div>`
 
-                    if(i > 0)
-                        if(new Date(_commits[i].commit.author.date).getDate() > commit_last_day) { /* Quand le jour n'est plus le même */
-                            document.getElementById('commitProg-'+new Date(_commits[i].commit.author.date).getDate()).innerHTML = 
-                                `<div style="height: 70px; width: 2px; background-color: #555555;">
-                                    <div style="position: relative; height: 100%; display: flex; justify-content: center;">
-                                        <div title="${new Date(_commits[i].commit.author.date)}" style="user-select: none; cursor: pointer; font-size: 14px; font-weight: 600; position: absolute; bottom: 0; background-color: #333333; padding: 7px; width: 20px; text-align: center; border-radius: 50px;">${new Date(_commits[i].commit.author.date).getDate()}</div>
-                                    </div>
-                                </div>`
-                        }
-
+                    if(new Date(_commits[i].commit.author.date).getDate() > commit_last_day) { /* Quand le jour n'est plus le même (ajoute le jour) */
+                        document.getElementById('commitProg-'+new Date(_commits[i].commit.author.date).getDate()).innerHTML = 
+                            `<div style="height: 70px; width: 2px; background-color: #555555;">
+                                <div style="position: relative; height: 100%; display: flex; justify-content: center;">
+                                    <div title="${new Date(_commits[i].commit.author.date)}" style="user-select: none; cursor: pointer; font-size: 14px; font-weight: 600; position: absolute; bottom: 0; background-color: #333333; padding: 7px; width: 20px; text-align: center; border-radius: 50px;">${new Date(_commits[i].commit.author.date).getDate()}</div>
+                                </div>
+                            </div>`
+                    }
+                    
                     commit_last_day = new Date(_commits[i].commit.author.date).getDate()
                 }
             }
@@ -185,7 +184,7 @@
                 `<div id="hse-e2e1-e2-e1" onclick="window.open('${last_commit.html_url}', '_blank')">
                     <div style="padding: 20px; display: flex; align-items: center;">
                         <div>
-                            <img style="width: 60px; border-radius: 10px; background-color: #444444; padding: 2px;" src="${last_commit.author.avatar_url}" alt="Profile picture of ${last_commit.author.login}">
+                            <img style="width: 60px; border-radius: 10px; background-color: #444444; padding: 2px; vertical-align: middle;" src="${last_commit.author.avatar_url}" alt="Profile picture of ${last_commit.author.login}">
                         </div>
                         <div style="margin-left: 20px;">
                             <div style="color: #cacaca; font-size: 19px; font-weight: 600;">
