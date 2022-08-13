@@ -29,12 +29,15 @@
     padding-right: 40px;
     border-right: 1px solid #444444;
 }
-#hse-e1 #hse-e1e1 > div {
+#hse-e1 #hse-e1e1 #hse-e1e1-img {
     width: 430.8px;
     height: 253.6px;
+}
+#hse-e1 #hse-e1e1 img {
+    width: 100%;
+    height: 100%;
     margin: auto;
-    background-size: 430.8px;
-    background-image: url(../../../assets/img/kot-laptop.png);
+    object-fit: cover;
     filter: drop-shadow(0 0 50px #a32e5fc2);
     transition: .5s;
 }
@@ -78,7 +81,7 @@
 }
 #hse-e2 #hse-e2e1 #hse-e2e1-e2 #hse-e2e1-e2-e1 {
     max-width: 400px;
-    background-color: #191919;
+    background-color: var(--dark-bkg-color);
     border-radius: 15px;
     cursor: pointer;
     user-select: none;
@@ -91,7 +94,7 @@
 }
 #hse-e2 #hse-e2e2 #hse-e2e2-e2 {
     margin-top: 30px;
-    background-color: #191919;
+    background-color: var(--dark-bkg-color);
     padding: 25px;
     border-radius: 15px;
 }
@@ -104,6 +107,12 @@
 .hse-ee1-e2 {
     padding-left: 40px;
 }
+.hse-ee1 .hse-ee1-title span {
+    text-align: center; 
+    font-size: 32px;
+    font-weight: 700;
+    color: #dedede;
+}
 .hse-ee1 .hse-ee1-desc {
     margin-top: 10px;
     max-width: 500px;
@@ -113,6 +122,17 @@
     max-width: 100%;
     box-shadow: 0px 0px 25px 2px rgba(0, 0, 0, 0.35);
     border-radius: 60px;
+}
+.hse-ee1 .hse-ee1-descImg {
+    position: absolute;
+    margin-top: 30px;
+    padding: 10px;
+    background-color: var(--dark-bkg-color);
+    max-width: 800px;
+    width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 15px;
 }
 /* End info sections */
 /* END MAIN */
@@ -128,14 +148,14 @@
         display: block;
     }
     #hse-e1 #hse-e1e1 {
-        display: block;
+        display: flex;
+        justify-content: center;
         border-right: none;
         padding-right: 0;
     }
-    #hse-e1 #hse-e1e1 > div {
+    #hse-e1 #hse-e1e1 #hse-e1e1-img {
         width: 215.4px;
         height: 126.8px;
-        background-size: cover;
     }
     #hse-e1 #hse-e1e2 {
         padding-left: 0;
@@ -195,4 +215,15 @@
         width: 180px;
     }
     /* End info sections */
+}
+@media (max-width: 325px) {
+    /* Last commit */
+    #hse-e2 #hse-e2e1 #hse-e2e1-e2 {
+        display: flex;
+        justify-content: center;
+    }
+    #hse-e2 #hse-e2e1 #hse-e2e1-e2 #hse-e2e1-e2-e1 > div div:last-child{
+        display: none;
+    }
+    /* End last commit */
 }
