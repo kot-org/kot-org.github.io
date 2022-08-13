@@ -42,7 +42,7 @@
     <!-- MAIN -->
     <main>
         <!-- Main section -->
-        <section class="home-sect">
+        <section class="home-sect" style="height: calc(100vh - 100px);">
             <div id="hse-e1" class="-hse">
                 <div>
                     <div id="hse-e1e1">
@@ -61,8 +61,22 @@
                     </div>
                 </div>
             </div>
+            <div style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%);" id="-indscro">
+                <svg xmlns="http://www.w3.org/2000/svg" style="height: 40px; width: 40px; transform: rotate(90deg); fill: #dedede;" viewBox="0 0 256 256" xml:space="preserve">
+                    <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
+                        <path d="M 24.25 90 c -0.896 0 -1.792 -0.342 -2.475 -1.025 c -1.367 -1.366 -1.367 -3.583 0 -4.949 L 60.8 45 L 21.775 5.975 c -1.367 -1.367 -1.367 -3.583 0 -4.95 c 1.367 -1.366 3.583 -1.366 4.95 0 l 41.5 41.5 c 1.367 1.366 1.367 3.583 0 4.949 l -41.5 41.5 C 26.042 89.658 25.146 90 24.25 90 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round"/>
+                    </g>
+                </svg>
+            </div>
         </section>
         <!-- End main section -->
+        <!-- Drivers/Services section -->
+        <section class="home-sect">
+            <div id="hse-e1a" class="-hse">
+
+            </div>
+        </section>
+        <!-- End drivers/services section -->
         <!-- Commits section -->
         <section class="home-sect">
             <div id="hse-e2" class="-hse">
@@ -73,7 +87,9 @@
                             <span class="-hov-effect" onclick="window.open('https://github.com/kot-org/Kot/commits', '_blank')" style="font-size: 32px; font-weight: 700; color: #dedede; cursor: pointer;">Last commit</span>
                         </div>
                         <div id="hse-e2e1-e2" class="-hov-effect">
-                            
+                            <div id="hse-e2e1-e2-e1">
+                                
+                            </div>
                         </div>
                     </div>
                     <!-- End last commit  -->
@@ -84,7 +100,9 @@
                         </div>
                         <div id="hse-e2e2-e2">
                             <span id="info_commits_timeline" style="color: #c2c2c2; font-size: 15px; font-weight: 600;"></span>
-                            <div id="commits_progress" style="display: flex; justify-content: space-between; margin-top: 20px; height: 4px; background-color: #303030; align-items: center;"></div>
+                            <div style="position: relative; height: 65px;">
+                                <div id="commits_progress" style="display: flex; justify-content: space-between; margin-top: 20px; height: 4px; background-color: #303030; align-items: center;"></div>
+                            </div>
                         </div>
                     </div>
                     <!-- End commits timeline -->
@@ -95,17 +113,17 @@
         <!-- Open source section -->
         <section class="home-sect" style="background: linear-gradient(160deg, rgb(137,66,219) 0%, rgb(181,34,115) 55%, rgb(223, 173, 89) 100%);">
             <div id="hse-e3" class="-hse">
-                <div id='hse-e3e1'>
-                    <div id='hse-e3e1-e1'>
-                        <div id='hse-e3e1-e1-e1'>
+                <div class='hse-ee1'>
+                    <div class='hse-ee1-e1'>
+                        <div class='hse-ee1-title'>
                             <span style="font-size: 32px; font-weight: 700; color: #dedede;">Open source</span>
                         </div>
-                        <div id='hse-e3e1-e1-e2'>
+                        <div class='hse-ee1-desc'>
                             <span>Kot is an open source project that anyone can understand how it works. You want to contribute? Join us!</span>
                         </div>
                     </div>
-                    <div id='hse-e3e1-e2'>
-                        <div id="hse-e3e1-e2-e1">
+                    <div class='hse-ee1-e2'>
+                        <div class="hse-ee1-img">
                             <img src="./assets/img/openSource.png" alt="Open source icon">
                         </div>
                     </div>
@@ -113,12 +131,34 @@
             </div>
         </section>
         <!-- End open source section -->
+        <!-- GitHub section -->
         <section class="home-sect">
-            <div id="hse-e4" class="-hse"></div>
+            <div id="hse-e4" class="-hse">
+                <div class='hse-ee1'>
+                    <div class='hse-ee1-e1'>
+                        <div class="hse-ee1-img">
+                            <img src="./assets/img/githubLogo.png" alt="Open source icon">
+                        </div>
+                    </div>
+                    <div class='hse-ee1-e2'>
+                        <div class='hse-ee1-title'>
+                            <span style="font-size: 32px; font-weight: 700; color: #dedede;">Join the project!</span>
+                        </div>
+                        <div class='hse-ee1-desc'>
+                            <span>Kot is available on <a href="https://github.com/kot-org/Kot" target="_blank">GitHub</a>. You can contribute for free!</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
+        <!-- End GitHub section -->
+        <!-- Contributors section -->
         <section class="home-sect">
-            <div id="hse-e5" class="-hse"></div>
+            <div id="hse-e5" class="-hse">
+
+            </div>
         </section>
+        <!-- End contributors section -->
     </main>
     <!-- END MAIN -->
     <script>
@@ -180,19 +220,17 @@
                 displayCommitsTimeline(commits, 10)
             }
 
-            document.getElementById('hse-e2e1-e2').innerHTML =
-                `<div id="hse-e2e1-e2-e1" onclick="window.open('${last_commit.html_url}', '_blank')">
-                    <div style="padding: 20px; display: flex; align-items: center;">
-                        <div>
-                            <img style="width: 60px; border-radius: 10px; background-color: #444444; padding: 2px; vertical-align: middle;" src="${last_commit.author.avatar_url}" alt="Profile picture of ${last_commit.author.login}">
+            document.getElementById('hse-e2e1-e2-e1').innerHTML =
+                `<div style="padding: 20px; display: flex; align-items: center;" onclick="window.open('${last_commit.html_url}', '_blank')">
+                    <div>
+                        <img style="width: 60px; border-radius: 10px; background-color: #444444; padding: 2px; vertical-align: middle;" src="${last_commit.author.avatar_url}" alt="Profile picture of ${last_commit.author.login}">
+                    </div>
+                    <div style="margin-left: 20px;">
+                        <div style="color: #cacaca; font-size: 19px; font-weight: 600;">
+                            <span>${last_commit.author.login}</span> &#8226; <span>${new Date(last_commit.commit.author.date).toLocaleString()}</span>
                         </div>
-                        <div style="margin-left: 20px;">
-                            <div style="color: #cacaca; font-size: 19px; font-weight: 600;">
-                                <span>${last_commit.author.login}</span> &#8226; <span>${new Date(last_commit.commit.author.date).toLocaleString()}</span>
-                            </div>
-                            <div style="color: #dedede; margin-top: 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 150px;">
-                                <span style="text-decoration: underline;">Click to view</span>
-                            </div>
+                        <div style="color: #dedede; margin-top: 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 150px;">
+                            <span style="text-decoration: underline;">Click to view</span>
                         </div>
                     </div>
                 </div>`
