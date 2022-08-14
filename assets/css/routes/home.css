@@ -1,5 +1,5 @@
 /* MAIN */
-.home-sect:nth-child(2n+1) {
+.home-sect:nth-child(2n) {
     background-color: #282828;
 }
 .home-sect {
@@ -65,6 +65,12 @@
     font-size: 17px;
     background-color: #a32e5f;
     user-select: none;
+}
+#hse-e1 #hse-e1e2 #hse-e1e2-e4 {
+    margin-top: 20px;
+}
+#hse-e1 #hse-e1e2 #hse-e1e2-e4 > span:last-child {
+    margin-left: 10px;
 }
 /* End main section */
 /* Commits section */

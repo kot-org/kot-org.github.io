@@ -29,3 +29,23 @@
     transition: .5s;
 }
 /* END HEADER */
+
+/* FOOTER */
+footer {
+    background-color: #252525;
+    padding: 3.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+footer img {
+    width: 30px;
+    margin-bottom: 20px;
+}
+footer > span:first-child {
+    font-size: 18px;
+    font-weight: 600;
+}
+/* END FOOTER */
