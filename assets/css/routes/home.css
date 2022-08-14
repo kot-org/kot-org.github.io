@@ -154,6 +154,12 @@
 .hse-ee1 .hse-ee1-descImg:hover > span {
     visibility: visible;
 }
+.hse-ee1 .hse-ee1-descImg > div {
+    background-size: 425px;
+    background-image: url('../../../assets/img/ContributorsList.png');
+    height: 300px;
+    animation: scrolling-contrib 7s linear infinite;
+}
 .hse-ee1 .hse-ee1-descImg:hover > div {
     opacity: .5;
 }
@@ -186,6 +192,11 @@
         max-width: 100%;
     }
     /* End main section */
+    /* Info section */
+    .hse-ee1 .hse-ee1-descImg > div {
+        background-size: 212.5px;
+    }
+    /* End info section */
 }
 @media (max-width: 700px) {
     #-indscro {
