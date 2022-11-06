@@ -32,13 +32,15 @@
 #hse-e1 #hse-e1e1 #hse-e1e1-img {
     width: 430.8px;
     height: 253.6px;
+    background-image: url(../../img/kot-laptop.png);
+    background-size: cover;
 }
 #hse-e1 #hse-e1e1 img {
     width: 100%;
     height: 100%;
     margin: auto;
     object-fit: cover;
-    filter: drop-shadow(0 0 50px #a32e5fc2);
+    filter: drop-shadow(0 0 50px #61489f49);
     transition: .5s;
 }
 #hse-e1 #hse-e1e2 {
@@ -63,7 +65,7 @@
     cursor: pointer;
     font-weight: 600;
     font-size: 17px;
-    background-color: #a32e5f;
+    background-color: #61489f;
     user-select: none;
 }
 #hse-e1 #hse-e1e2 #hse-e1e2-e4 {
@@ -191,6 +193,7 @@
     #hse-e1 #hse-e1e1 #hse-e1e1-img {
         width: 215.4px;
         height: 126.8px;
+        background-image: url(../../img/kot-laptop2.png);
     }
     #hse-e1 #hse-e1e2 {
         padding-left: 0;
